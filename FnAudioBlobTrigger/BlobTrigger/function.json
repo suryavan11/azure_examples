@@ -5,15 +5,22 @@
       "name": "myblob",
       "type": "blobTrigger",
       "direction": "in",
-      "path": "videoblob/{name}.MP4",
-      "connection": "AzureWebJobsStorage"
+      "path": "inputcontainer/{blobname}.{blobextension}",
+      "connection": "yourstorageaccount_STORAGE"
+    },
+    {
+      "name": "inputBlob",
+      "type": "blob",
+      "direction": "in",
+      "path": "inputcontainer/{blobname}.{blobextension}",
+      "connection": "yourstorageaccount_STORAGE"
     },
     {
       "name": "outputBlob",
       "type": "blob",
       "direction": "out",
-      "path": "original/{name}",
-      "connection": "wlimportstaging_STORAGE"
+      "path": "outputcontainer/{blobname}.{blobextension}",
+      "connection": "yourstorageaccount_STORAGE"
     }
   ]
 }
