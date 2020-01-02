@@ -7,6 +7,13 @@
       "direction": "in",
       "path": "videoblob/{name}.MP4",
       "connection": "AzureWebJobsStorage"
+    },
+    {
+      "name": "outputBlob",
+      "type": "blob",
+      "direction": "out",
+      "path": "original/{name}",
+      "connection": "wlimportstaging_STORAGE"
     }
   ]
 }
