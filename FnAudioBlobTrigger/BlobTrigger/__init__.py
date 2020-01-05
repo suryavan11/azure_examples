@@ -15,10 +15,10 @@ def main(myblob: func.InputStream):
     logging.info(name)
 
     queue_service = QueueService(account_name=os.environ['remoteStorageAccountName'], account_key=os.environ['remoteStorageAccountKey'])
-    queue_service.encode_function = QueueMessageFormat.text_base64encode
+    #queue_service.encode_function = QueueMessageFormat.text_base64encode
 
-    now = datetime.strftime(datetime.now(), "%Y-%m-%dT%H:%M:%S%Z")
-    video = "{\"filename\":\"" + name + "\", \"location\":\"Utrecht\", \"track\":\"5b\", \"timestamp\":\"" + now + "\"}"
-    #video_base64 = base64.b64encode(bytes(video, 'utf-8'))
+    #now = datetime.strftime(datetime.now(), "%Y-%m-%dT%H:%M:%S%Z")
+    #video = "{\"filename\":\"" + name + "\", \"location\":\"Utrecht\", \"track\":\"5b\", \"timestamp\":\"" + now + "\"}"
+    ##video_base64 = base64.b64encode(bytes(video, 'utf-8'))
 
     queue_service.put_message(os.environ['AzureQueueName'], video)
